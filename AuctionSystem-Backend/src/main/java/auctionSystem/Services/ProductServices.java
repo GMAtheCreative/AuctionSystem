@@ -1,14 +1,15 @@
 package auctionSystem.Services;
 
-import auctionSystem.Dtos.requests.ProductRequestDTO;
-import auctionSystem.Dtos.responses.ProductResponseDTO;
+import auctionSystem.Dtos.requests.product.*;
+import auctionSystem.Dtos.responses.product.*;
 
 import java.util.List;
 
 public interface ProductServices {
-    List<ProductResponseDTO> getAllProducts();
-    ProductResponseDTO getProductById(String id);
-    ProductResponseDTO createProduct(ProductRequestDTO productRequestDTO);
-    ProductResponseDTO updateProduct(String id, ProductRequestDTO productRequestDTO);
-    ProductResponseDTO deleteProduct (String id);
+    List<GetAllProductResponse> getAllProducts();
+    List<PoductResponseByCategory> getProductsByCategory(PoductRequestByCategory productRequestByCategory);
+    ProductResponseByName getProductByName(GetProductRequestByName productRequestByName);
+    CreateProductResponse createProduct(CreateProductRequest createProductRequest);
+    UpdateProductResponse updateProduct(UpdateProductRequest updateProductRequest);
+    DeleteProductResponse deleteProduct (DeleteProductRequest deleteProductRequest);
 }
